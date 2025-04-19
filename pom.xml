@@ -1,7 +1,7 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.evolutionnext</groupId>
-    <artifactId>jdk22-features-excited</artifactId>
+    <artifactId>java_enable_foreign_function_memory_api</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
@@ -21,8 +21,8 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.12.1</version>
                     <configuration>
-                        <source>22</source>
-                        <target>22</target>
+                        <source>24</source>
+                        <target>24</target>
                         <compilerArgs>
                             <arg>--enable-preview</arg>
                             <arg>-Xlint:removal</arg>
