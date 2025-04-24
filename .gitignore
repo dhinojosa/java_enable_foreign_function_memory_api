@@ -18,3 +18,9 @@ buildNumber.properties
 .classpath
 
 .idea
+
+# Shared libraries (MacOS/Linux/Windows)
+*.dylib
+*.so
+*.dll
+
