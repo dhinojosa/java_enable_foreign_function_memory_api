@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FFMKataExtractTest {
 
+    //Or -Djava.library.path=/Users/danno/Development/mine/java_enable_foreign_function_memory_api/projects/ffm_kata
     static {
         String libraryPath = "/Users/danno/Development/mine/java_enable_foreign_function_memory_api/projects/ffm_kata/libffm_kata.dylib"; // Absolute path to the library
         System.load(libraryPath); // Explicitly load the native library
