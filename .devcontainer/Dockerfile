@@ -42,7 +42,6 @@ RUN MAVEN_VERSION=3.9.8 \
 ENV MAVEN_HOME=/usr/local/maven
 ENV PATH=${MAVEN_HOME}/bin:${PATH}
 
-# Install jextract for the container architecture
 RUN set -eux; \
     case "${TARGETOS}/${TARGETARCH}" in \
       "linux/amd64") \
@@ -55,7 +54,8 @@ RUN set -eux; \
     curl -fL "$JEXTRACT_URL" -o /tmp/jextract.tar.gz; \
     mkdir -p /usr/local/jextract; \
     tar -xzf /tmp/jextract.tar.gz -C /usr/local/jextract --strip-components=1; \
-    rm /tmp/jextract.tar.gz; \
-    ln -s /usr/local/jextract/bin/jextract /usr/local/bin/jextract
+    rm /tmp/jextract.tar.gz
+
+ENV PATH=/usr/local/jextract/bin:${PATH}
 
 USER vscode
