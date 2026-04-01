@@ -76,7 +76,8 @@ public class FFMKataTest {
     @Test
     void testDistanceSquared() throws Throwable {
         try (Arena arena = Arena.ofConfined()) {
-            MemoryLayout pointLayout = MemoryLayout.structLayout(JAVA_INT.withName("x"), JAVA_INT.withName("y"));
+            MemoryLayout pointLayout =
+                MemoryLayout.structLayout(JAVA_INT.withName("x"), JAVA_INT.withName("y"));
             MemorySegment point = arena.allocate(pointLayout);
             point.setAtIndex(JAVA_INT, 0, 3);
             point.setAtIndex(JAVA_INT, 1, 4);
@@ -117,11 +118,13 @@ public class FFMKataTest {
             MemorySegment ptr = (MemorySegment) greet.invoke();
 
             System.out.println(
-                "Size, in bytes, of memory segment created by calling malloc.invoke(): " + ptr.byteSize());
+                "Size, in bytes, of memory segment created by calling malloc.invoke(): "
+                + ptr.byteSize());
 
             MemorySegment readable = ptr.reinterpret(100);
             System.out.println(
-                "Size, in bytes, of memory segment created by calling ptr.reinterpret: " + readable.byteSize());
+                "Size, in bytes, of memory segment created by calling ptr.reinterpret: " +
+                readable.byteSize());
 
             String result = readable.getString(0, StandardCharsets.UTF_8);
             assertEquals("Hello from C!", result);
